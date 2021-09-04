@@ -19,10 +19,10 @@
 #find package/*/ feeds/*/ -maxdepth 2 -path "*luci-app-bypass/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-ssr-server/shadowsocksr-libev-server/g' {}
 
 # 修改版本号
-sed -i 's/$(VERSION) &&/$(VERSION) ;/g' include/download.mk
-date=`date +%m.%d`
-sed -i "s/DISTRIB_DESCRIPTION.*/DISTRIB_DESCRIPTION='%D %V by kenzo'/g" package/base-files/files/etc/openwrt_release
-sed -i "s/# REVISION:=x/REVISION:= $date/g" include/version.mk
+# sed -i 's/$(VERSION) &&/$(VERSION) ;/g' include/download.mk
+# date=`date +%m.%d`
+# sed -i "s/DISTRIB_DESCRIPTION.*/DISTRIB_DESCRIPTION='%D %V by kenzo'/g" package/base-files/files/etc/openwrt_release
+# sed -i "s/# REVISION:=x/REVISION:= $date/g" include/version.mk
 
 # 修改openwrt登陆地址,把下面的192.168.5.1修改成你想要的就可以了
 sed -i 's/192.168.1.1/192.168.3.1/g' package/base-files/files/bin/config_generate
